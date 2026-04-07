@@ -2,70 +2,388 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Spellora</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="About Spellora – a calm, focused spelling practice app for children." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Spellora</title>
+  <meta name="description" content="Learn about Spellora, the voice-powered spelling bee coach for children aged 6–13." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --blue-light: #ddeeff;
+      --blue-mid: #a8d4f5;
+      --blue-main: #4a9fd4;
+      --blue-dark: #2d7ab5;
+      --green: #3db87a;
+      --green-dark: #2d9962;
+      --yellow: #f5c842;
+      --coral: #ff6b6b;
+      --purple: #8b5cf6;
+      --text-dark: #1a2540;
+      --text-mid: #3d5068;
+      --text-light: #6b8099;
+      --white: #ffffff;
+      --card-bg: rgba(255,255,255,0.85);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 32px;
-      background: #ffffff;
-      color: #111;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(160deg, #e8f4fd 0%, #d0eaff 40%, #e8f0ff 100%);
+      min-height: 100vh;
+      color: var(--text-dark);
+      overflow-x: hidden;
     }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 16px;
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(168,212,245,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
     }
-    h2 {
-      font-size: 22px;
-      margin-top: 28px;
+
+    /* NAV */
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    p {
-      font-size: 16px;
-      color: #333;
-    }
-    a {
-      color: #2563eb;
+
+    .nav-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue-dark);
       text-decoration: none;
     }
+
+    .nav-logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue-dark); }
+
+    /* PAGE HERO */
+    .page-hero {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 48px 48px;
+      text-align: center;
+    }
+
+    .page-hero .emoji {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .page-hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* CONTENT */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+
+    .content-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 4px 24px rgba(74,159,212,0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .content-card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content-card p {
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .content-card p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(74,159,212,0.1), rgba(139,92,246,0.08));
+      border-left: 4px solid var(--blue-dark);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .value-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .value-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .value-list li::before {
+      content: '✦';
+      color: var(--blue-dark);
+      font-size: 0.8rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* CONTACT */
+    .contact-card {
+      background: linear-gradient(135deg, #1a2540, #2d4a7a);
+      border-radius: 24px;
+      padding: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 16px 48px rgba(26,37,64,0.2);
+    }
+
+    .contact-card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 12px; }
+
+    /* FOOTER */
     footer {
-      margin-top: 48px;
-      font-size: 14px;
-      color: #666;
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(74,159,212,0.15);
+      padding: 32px 48px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--blue-dark); }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 40px 24px 32px; }
+      .page-hero h1 { font-size: 2rem; }
+      .content { padding: 0 24px 60px; }
+      footer { padding: 24px; }
     }
   </style>
 </head>
 <body>
 
-<h1>About Spellora</h1>
+  <nav>
+    <a href="/" class="nav-logo">Spell<span>ora</span></a>
+    <ul class="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="mailto:contact@spellora.app">Contact</a></li>
+    </ul>
+  </nav>
 
-<p><strong>Spellora</strong> is a calm, focused spelling practice app designed for children.</p>
+  <div class="page-hero">
+    <span class="emoji">🎓</span>
+    <h1>About Spellora</h1>
+    <p>A calm, voice-powered spelling coach built with care for children and families.</p>
+  </div>
 
-<p>It helps learners improve spelling confidence through listening, repetition, and gentle feedback — without distractions.</p>
+  <div class="content">
+    <a href="/" class="back-link">← Back to home</a>
 
-<h2>Why Spellora?</h2>
-<p>Many spelling apps are noisy, competitive, or overwhelming. Spellora is intentionally different.</p>
-<p>It is designed to feel clear, supportive, and pressure-free.</p>
+    <div class="content-card">
+      <h2>🌟 What is Spellora?</h2>
+      <p>Spellora is a voice-powered spelling bee coach for children aged 6 to 13. Children hear a word spoken aloud and say each letter one at a time — exactly like a real spelling bee.</p>
+      <p>Apple's Speech Recognition checks each letter in real time, giving instant feedback through Spello, the friendly mascot who reacts to every attempt with encouragement and celebration.</p>
+      <div class="highlight-box">"Many spelling apps are noisy, competitive, or overwhelming. Spellora is intentionally different — calm, focused, and pressure-free."</div>
+    </div>
 
-<h2>Designed for Families</h2>
-<p>Spellora does not require accounts, does not show ads, and does not track users.</p>
-<p>Practice happens entirely on the device.</p>
+    <div class="content-card">
+      <h2>💡 Why we built it</h2>
+      <p>Spelling practice doesn't have to mean staring at a screen typing letters. Real spelling bees are spoken — children should practise the same way they'll be tested.</p>
+      <p>Spellora brings the spelling bee experience home, making it easy for children to practise independently with a patient, encouraging coach that never gets tired or frustrated.</p>
+    </div>
 
-<h2>Our Philosophy</h2>
-<p>Learning works best when children feel safe, focused, and encouraged.</p>
-<p>Spellora is built around that belief.</p>
+    <div class="content-card">
+      <h2>📚 What's inside</h2>
+      <ul class="value-list">
+        <li>467 carefully chosen British English words across four age groups (6–7, 8–9, 10–11, 12–13)</li>
+        <li>Voice-powered letter-by-letter spelling with real-time feedback</li>
+        <li>Spello mascot with idle, listening, correct, incorrect and cheering moods</li>
+        <li>Multi-child profiles — each child has their own progress and streak</li>
+        <li>Custom word lists — add school homework words for personalised practice</li>
+        <li>Word of the Day with a fun fact to spark curiosity</li>
+        <li>My Progress screen with streaks, accuracy and words completed</li>
+        <li>Type mode for children who prefer keyboard input</li>
+        <li>Completely free — no ads, no in-app purchases, no subscriptions</li>
+      </ul>
+    </div>
 
-<footer>
-  <p>
-    <a href="index.html">Home</a> ·
-    <a href="privacy.html">Privacy Policy</a>
-  </p>
-</footer>
+    <div class="content-card">
+      <h2>🔒 Our values</h2>
+      <p>Spellora is built around a simple belief: children deserve apps that respect their privacy and put learning first.</p>
+      <ul class="value-list">
+        <li>All voice recognition happens on-device — no audio ever leaves your phone</li>
+        <li>No accounts, no sign-ups, no personal data collected</li>
+        <li>No advertising of any kind</li>
+        <li>Fully COPPA compliant and designed for children's safety</li>
+        <li>Free forever — every child deserves access regardless of budget</li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <h2>💬 Get in touch</h2>
+      <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+      <a href="mailto:contact@spellora.app" class="contact-btn">
+        ✉️ contact@spellora.app
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+      <li><a href="mailto:contact@spellora.app">contact@spellora.app</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Anand Basavaraj Muddi · Spellora is not affiliated with Apple Inc.</p>
+  </footer>
 
 </body>
 </html>
