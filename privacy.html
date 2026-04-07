@@ -2,76 +2,464 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spellora – Privacy Policy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Privacy Policy for the Spellora spelling practice app." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Spellora</title>
+  <meta name="description" content="Spellora's privacy policy. We take children's privacy seriously — no data collected, no accounts, no tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --blue-light: #ddeeff;
+      --blue-mid: #a8d4f5;
+      --blue-main: #4a9fd4;
+      --blue-dark: #2d7ab5;
+      --green: #3db87a;
+      --green-dark: #2d9962;
+      --yellow: #f5c842;
+      --text-dark: #1a2540;
+      --text-mid: #3d5068;
+      --text-light: #6b8099;
+      --card-bg: rgba(255,255,255,0.85);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 32px;
-      background: #ffffff;
-      color: #111;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(160deg, #e8f4fd 0%, #d0eaff 40%, #e8f0ff 100%);
+      min-height: 100vh;
+      color: var(--text-dark);
+      overflow-x: hidden;
     }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 16px;
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(168,212,245,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
     }
-    h2 {
-      font-size: 22px;
-      margin-top: 28px;
+
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    p {
-      font-size: 16px;
-      color: #333;
-    }
-    a {
-      color: #2563eb;
+
+    .nav-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue-dark);
       text-decoration: none;
     }
+
+    .nav-logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue-dark); }
+
+    .page-hero {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 48px 48px;
+      text-align: center;
+    }
+
+    .page-hero .emoji {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .page-hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .last-updated {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(74,159,212,0.12);
+      color: var(--blue-dark);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* SUMMARY PILLS */
+    .summary-pills {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill {
+      background: var(--card-bg);
+      border: 2px solid rgba(61,184,122,0.3);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(61,184,122,0.1);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 12px; }
+
+    .content-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 4px 24px rgba(74,159,212,0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .content-card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content-card p {
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .content-card p:last-child { margin-bottom: 0; }
+
+    .content-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .content-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .content-card ul li::before {
+      content: '✓';
+      color: var(--green-dark);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .alert-card {
+      background: linear-gradient(135deg, rgba(61,184,122,0.08), rgba(74,159,212,0.08));
+      border: 2px solid rgba(61,184,122,0.25);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .alert-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .alert-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .alert-card p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #1a2540, #2d4a7a);
+      border-radius: 24px;
+      padding: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 16px 48px rgba(26,37,64,0.2);
+    }
+
+    .contact-card h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
     footer {
-      margin-top: 48px;
-      font-size: 14px;
-      color: #666;
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(74,159,212,0.15);
+      padding: 32px 48px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--blue-dark); }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 40px 24px 32px; }
+      .page-hero h1 { font-size: 2rem; }
+      .summary-pills { padding: 0 24px 24px; }
+      .content { padding: 0 24px 60px; }
+      footer { padding: 24px; }
     }
   </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
+  <nav>
+    <a href="/" class="nav-logo">Spell<span>ora</span></a>
+    <ul class="nav-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="mailto:contact@spellora.app">Contact</a></li>
+    </ul>
+  </nav>
 
-<p><strong>Spellora</strong> respects your privacy. This app is designed to be safe for children and transparent for parents.</p>
+  <div class="page-hero">
+    <span class="emoji">🔒</span>
+    <h1>Privacy Policy</h1>
+    <p>Spellora is designed to be safe for children and completely transparent for parents.</p>
+    <span class="last-updated">Last updated: January 2026</span>
+  </div>
 
-<h2>Information We Collect</h2>
-<p>Spellora does <strong>not collect, store, or share</strong> any personal data.</p>
+  <!-- SUMMARY PILLS -->
+  <div class="summary-pills">
+    <div class="pill">✓ No personal data collected</div>
+    <div class="pill">✓ No accounts required</div>
+    <div class="pill">✓ On-device processing only</div>
+    <div class="pill">✓ No ads ever</div>
+    <div class="pill">✓ COPPA compliant</div>
+  </div>
 
-<h2>Microphone Access</h2>
-<p>The app uses the device microphone only to listen to spelling attempts during practice sessions.</p>
-<p>Audio is processed <strong>on the device only</strong> and is <strong>never recorded, stored, or transmitted</strong> off the device.</p>
+  <div class="content">
+    <a href="/" class="back-link">← Back to home</a>
 
-<h2>Children’s Privacy</h2>
-<p>Spellora is suitable for children and does not require accounts, names, email addresses, or any personal identifiers.</p>
+    <div class="alert-card">
+      <div class="alert-icon">👶</div>
+      <div>
+        <h3>Designed for children's safety</h3>
+        <p>Spellora does not collect, store, or share any personal data. The app is built from the ground up to be safe for children of all ages.</p>
+      </div>
+    </div>
 
-<h2>Third-Party Services</h2>
-<p>Spellora does not use third-party analytics, advertising, or tracking services.</p>
+    <div class="content-card">
+      <h2>📋 Information We Collect</h2>
+      <p>Spellora does <strong>not collect, store, or share</strong> any personal data about you or your child.</p>
+      <p>All spelling practice data — profiles, progress, streaks, and word lists — is stored locally on your device only and never transmitted anywhere.</p>
+    </div>
 
-<h2>Data Sharing</h2>
-<p>No data is shared with any third parties.</p>
+    <div class="content-card">
+      <h2>🎙️ Microphone & Voice Recognition</h2>
+      <p>Spellora uses your device's microphone to listen to spelling attempts during practice sessions.</p>
+      <ul>
+        <li>Audio is processed on your device only using Apple's Speech framework</li>
+        <li>Audio is never recorded, stored, or transmitted off the device</li>
+        <li>Voice recognition requires microphone permission, which you can revoke at any time in iOS Settings</li>
+        <li>No voice data is sent to Spellora or any third party</li>
+      </ul>
+    </div>
 
-<h2>Changes to This Policy</h2>
-<p>If this privacy policy changes in the future, updates will be posted on this page.</p>
+    <div class="content-card">
+      <h2>📊 Analytics</h2>
+      <p>Spellora uses TelemetryDeck, a privacy-first analytics tool, to understand how the app is used and improve the experience.</p>
+      <ul>
+        <li>TelemetryDeck collects anonymised usage signals only (e.g. "a session was started")</li>
+        <li>No personally identifiable information is ever collected</li>
+        <li>Data is not linked to any user identity</li>
+        <li>Data is never used for advertising or tracking</li>
+        <li>TelemetryDeck is fully COPPA compliant</li>
+      </ul>
+    </div>
 
-<h2>Contact</h2>
-<p>If you have questions about this privacy policy, contact us at:</p>
-<p><strong>contact@spellora.app</strong></p>
+    <div class="content-card">
+      <h2>👶 Children's Privacy</h2>
+      <p>Spellora is designed for children and takes children's privacy very seriously.</p>
+      <ul>
+        <li>No accounts, names, email addresses, or personal identifiers are required</li>
+        <li>Child profiles are stored locally on device only</li>
+        <li>No child data is ever transmitted or shared</li>
+        <li>Spellora complies with the Children's Online Privacy Protection Act (COPPA)</li>
+      </ul>
+    </div>
 
-<footer>
-  <p>Last updated: January 2026</p>
-</footer>
+    <div class="content-card">
+      <h2>🤝 Third-Party Services</h2>
+      <p>Spellora uses only the following third-party service:</p>
+      <ul>
+        <li><strong>TelemetryDeck</strong> — privacy-first analytics (anonymised, no personal data)</li>
+        <li><strong>Apple Speech Framework</strong> — on-device voice recognition only</li>
+      </ul>
+      <p style="margin-top:12px;">Spellora does not use advertising networks, social media SDKs, or any data brokers.</p>
+    </div>
+
+    <div class="content-card">
+      <h2>🔄 Changes to This Policy</h2>
+      <p>If this privacy policy changes in the future, updates will be posted on this page with an updated date. We will never make changes that reduce your privacy protections without clear notice.</p>
+    </div>
+
+    <div class="contact-card">
+      <h2>Questions about privacy?</h2>
+      <p>If you have any questions about this privacy policy or how Spellora handles data, please get in touch.</p>
+      <a href="mailto:contact@spellora.app" class="contact-btn">
+        ✉️ contact@spellora.app
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="mailto:contact@spellora.app">contact@spellora.app</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Anand Basavaraj Muddi · Spellora is not affiliated with Apple Inc.</p>
+  </footer>
 
 </body>
 </html>
